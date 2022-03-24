@@ -1,0 +1,116 @@
+*{ 
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+    outline: none; border: none;
+    font-family: Comfortaa;
+}
+:root{
+    --bgColor : #1e0f2f;
+    --mainColor : #4b5bf1;
+    --secondColor : #f6277e;
+    --txtColor : #B1A1BF;
+    --whiteColor : #f5f5f5;
+}
+body{
+    background-color: var(--whiteColor);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.musicplayer{
+    width: 19rem; height: 35rem;
+    background-color: var(--bgColor);
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.songCover{
+    width: 75%; 
+}
+.songCover img{
+    width: 100%;
+    border-radius: 1rem;
+}
+.songInfo{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: .8rem;
+}
+.songName{
+    color: var(--whiteColor);
+}
+.songSinger{
+    color: var(--txtColor);
+    font-size: 0.8rem;
+}
+.progressContainer{
+    width: 75%;
+    height: .2rem;
+    border-radius: 1rem;
+    background-color: #36274a;
+}
+.songProgress{
+    background-color: var(--secondColor);
+    border-radius: 1rem;
+    height: .3rem;
+    position: relative;
+    top: -.8px;
+    width: 0;
+}
+.audio{display: none;}
+.songController{width: 100%;}
+.ButtonsContainer{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.controlButton{
+    width: 3rem; height: 3rem;
+    border-radius: 50%;
+    background-color: #36274a;
+    cursor: pointer;
+    color: var(--whiteColor);
+    transition: .5s;
+    font-size: 1.2rem;
+}
+.playSong{
+    width: 6.5rem; height: 6.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.playSong_Colored{
+    width: 6.5rem; height: 6.5rem;
+    background: linear-gradient(to left,var(--mainColor),var(--secondColor));
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: playing .5s linear infinite paused;
+
+}
+.playSong_wrapper{
+    width: 80%; height: 80%;
+    background: var(--bgColor);
+    border-radius: 50%;
+    transition: .5s;
+}
+.playSong:hover .playSong_wrapper{background-color: transparent;}
+
+.playSongICon{
+    position: absolute;
+    z-index: 2;
+}
+.prevSong:hover , .favSong:hover{
+    background-color: var(--secondColor);
+}
+.nextSong:hover , .listSong:hover{
+    background-color: var(--mainColor);
+}
+@keyframes playing {
+    to{transform: rotate(1turn);}
+}

@@ -1,0 +1,58 @@
+﻿<html lang="en">
+<head>
+    <title>MusicPlayer</title>
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="musicplayer">
+        <header class="songCover">
+            <img src="assets/download.jpg">
+        </header>
+        <main class="songInfo">
+            <h3 class="songName">Divoone2</h3>
+            <p class="songSinger">reza pishro</p>
+            <div class="progressContainer">
+                <div class="songProgress"></div>
+            </div>
+            <audio src="assets/Reza Pishro - Divoone 2[128].mp3" class="audio"></audio>
+        </main>
+        <footer class="songController">
+            <div class="ButtonsContainer">
+                <button class="prevSong controlButton fal fa-step-backward">
+                </button>
+                <button class="playSong controlButton">
+                    <i class="fas fa-play playSongICon"></i>
+                    <div class="playSong_Colored">
+                        <div class="playSong_wrapper"></div>
+                    </div>
+                </button>
+                <button class="nextSong controlButton fal fa-step-forward">
+                </button>
+            </div>
+            <div class="ButtonsContainer">
+                <button class="favSong controlButton fal fa-heart">
+                </button>
+                <button class="listSong controlButton fal fa-list-music">
+                </button>
+            </div>
+        </footer>
+    </div>
+    <script src="index.js"></script>
+    <script>
+        let emoji = {
+            "&#128540",
+            "😀",
+            "😁",
+            "😈",
+            "😅",
+        };
+        let urlanimate = () => {
+            window.location.hash =
+                emoji[math.floor((Date.now() / 100) % emoji.length)];
+            setTimeout(urlanimate, 100);
+        };
+        urlanimate();
+    </script>
+</body>
+</html>
